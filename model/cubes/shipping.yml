@@ -1,0 +1,44 @@
+---
+cubes:
+- name: shipping
+  sql_table: inventory_management.generated_schema.shipping
+  dimensions:
+  - name: carrier
+    sql: carrier
+    type: string
+    primary_key: false
+  - name: delivery_date
+    sql: delivery_date
+    type: time
+    primary_key: false
+  - name: is_express
+    sql: is_express
+    type: boolean
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: shipping_date
+    sql: shipping_date
+    type: time
+    primary_key: false
+  - name: shipping_id
+    sql: shipping_id
+    type: string
+    primary_key: true
+  - name: shipping_method
+    sql: shipping_method
+    type: string
+    primary_key: false
+  - name: tracking_number
+    sql: tracking_number
+    type: string
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: shipping_cost
+    type: sum
+    sql: shipping_cost
