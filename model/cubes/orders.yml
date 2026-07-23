@@ -1,0 +1,46 @@
+---
+cubes:
+- name: orders
+  sql_table: inventory_management.generated_schema.orders
+  dimensions:
+  - name: customer_id
+    sql: customer_id
+    type: string
+    primary_key: true
+  - name: is_gift
+    sql: is_gift
+    type: boolean
+    primary_key: false
+  - name: order_date
+    sql: order_date
+    type: time
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: order_status
+    sql: order_status
+    type: string
+    primary_key: false
+  - name: payment_method
+    sql: payment_method
+    type: string
+    primary_key: false
+  - name: shipping_address
+    sql: shipping_address
+    type: string
+    primary_key: false
+  measures:
+  - name: tax_amount
+    type: sum
+    sql: tax_amount
+  - name: row_count
+    type: count
+    sql:
+  - name: total_amount
+    type: sum
+    sql: total_amount
+  - name: discount_amount
+    type: sum
+    sql: discount_amount
