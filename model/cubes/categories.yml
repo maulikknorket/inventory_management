@@ -1,0 +1,29 @@
+---
+cubes:
+- name: categories
+  sql_table: inventory_management.generated_schema.categories
+  dimensions:
+  - name: category_id
+    sql: category_id
+    type: string
+    primary_key: true
+  - name: category_name
+    sql: category_name
+    type: string
+    primary_key: false
+  - name: description
+    sql: description
+    type: string
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: parent_category_id
+    sql: parent_category_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
