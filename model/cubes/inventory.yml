@@ -1,0 +1,35 @@
+---
+cubes:
+- name: inventory
+  sql_table: inventory_management.generated_schema.inventory
+  dimensions:
+  - name: inventory_id
+    sql: inventory_id
+    type: string
+    primary_key: true
+  - name: last_restock_date
+    sql: last_restock_date
+    type: time
+    primary_key: false
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  - name: reorder_point
+    sql: reorder_point
+    type: string
+    primary_key: false
+  - name: warehouse_id
+    sql: warehouse_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: quantity_on_hand
+    type: sum
+    sql: quantity_on_hand
+  - name: quantity_reserved
+    type: sum
+    sql: quantity_reserved

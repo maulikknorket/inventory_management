@@ -1,0 +1,56 @@
+---
+cubes:
+- name: customers
+  sql_table: inventory_management.generated_schema.customers
+  dimensions:
+  - name: customer_name
+    sql: customer_name
+    type: string
+    primary_key: false
+  - name: email
+    sql: email
+    type: string
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: join_date
+    sql: join_date
+    type: time
+    primary_key: false
+  - name: loyalty_points
+    sql: loyalty_points
+    type: string
+    primary_key: false
+  - name: phone
+    sql: phone
+    type: string
+    primary_key: false
+  - name: state
+    sql: state
+    type: string
+    primary_key: false
+  - name: total_spent
+    sql: total_spent
+    type: string
+    primary_key: false
+  - name: zip_code
+    sql: zip_code
+    type: string
+    primary_key: false
+  - name: city
+    sql: city
+    type: string
+    primary_key: false
+  - name: customer_id
+    sql: customer_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: sum_loyalty_points
+    type: sum
+    sql: loyalty_points

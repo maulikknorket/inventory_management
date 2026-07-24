@@ -1,0 +1,52 @@
+---
+cubes:
+- name: employees
+  sql_table: inventory_management.generated_schema.employees
+  dimensions:
+  - name: department_id
+    sql: department_id
+    type: string
+    primary_key: true
+  - name: email
+    sql: email
+    type: string
+    primary_key: false
+  - name: employee_id
+    sql: employee_id
+    type: string
+    primary_key: true
+  - name: first_name
+    sql: first_name
+    type: string
+    primary_key: false
+  - name: hire_date
+    sql: hire_date
+    type: time
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: last_name
+    sql: last_name
+    type: string
+    primary_key: false
+  - name: manager_id
+    sql: manager_id
+    type: string
+    primary_key: true
+  - name: phone
+    sql: phone
+    type: string
+    primary_key: false
+  - name: salary
+    sql: salary
+    type: string
+    primary_key: false
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: sum_salary
+    type: sum
+    sql: salary

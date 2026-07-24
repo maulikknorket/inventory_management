@@ -1,0 +1,38 @@
+---
+cubes:
+- name: order_items
+  sql_table: inventory_management.generated_schema.order_items
+  dimensions:
+  - name: discount
+    sql: discount
+    type: string
+    primary_key: false
+  - name: is_express_shipping
+    sql: is_express_shipping
+    type: boolean
+    primary_key: false
+  - name: order_id
+    sql: order_id
+    type: string
+    primary_key: true
+  - name: order_item_id
+    sql: order_item_id
+    type: string
+    primary_key: true
+  - name: product_id
+    sql: product_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: quantity
+    type: sum
+    sql: quantity
+  - name: unit_price
+    type: sum
+    sql: unit_price
+  - name: total_price
+    type: sum
+    sql: total_price

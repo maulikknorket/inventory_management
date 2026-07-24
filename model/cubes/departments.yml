@@ -1,0 +1,36 @@
+---
+cubes:
+- name: departments
+  sql_table: inventory_management.generated_schema.departments
+  dimensions:
+  - name: budget
+    sql: budget
+    type: string
+    primary_key: false
+  - name: department_id
+    sql: department_id
+    type: string
+    primary_key: true
+  - name: department_name
+    sql: department_name
+    type: string
+    primary_key: false
+  - name: description
+    sql: description
+    type: string
+    primary_key: false
+  - name: is_active
+    sql: is_active
+    type: boolean
+    primary_key: false
+  - name: manager_id
+    sql: manager_id
+    type: string
+    primary_key: true
+  measures:
+  - name: row_count
+    type: count
+    sql:
+  - name: sum_budget
+    type: sum
+    sql: budget
