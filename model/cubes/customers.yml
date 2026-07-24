@@ -50,7 +50,7 @@ cubes:
   measures:
   - name: row_count
     type: count
-    sql:
+    sql: '*'
   - name: sum_loyalty_points
     type: sum
     sql: loyalty_points
